@@ -10,7 +10,7 @@ model = pickle.load(open('model_wine.pkl', 'rb'))
 def home():
     return render_template('Wine_quality.html')
 
-@app.route('/predict',methods=['POST'])
+@app.route('/predict',methods=['POST','GET'])
 def predict():
     '''
     For rendering results on HTML GUI
