@@ -18,10 +18,10 @@
 
      <!-- Main Input For Receiving Query to our ML -->
     <form action="/predict" method="post">
-    	<input type="text" name="Citric Acid" placeholder="Citric Acid" required="required" />
-        <input type="text" name="Density" placeholder="Density" required="required" />
-		<input type="text" name="pH" placeholder="pH" required="required" />
-        <input type="text" name="Alcohol" placeholder="Alcohol" required="required" />
+    	<input type="text" name="Citric Acid" placeholder="Citric Acid  (Range: 0-1)" required="required" />
+        <input type="text" name="Density" placeholder="Density  (Range: 0-1)" required="required" />
+		<input type="text" name="pH" placeholder="pH (Range: 0-14)" required="required" />
+        <input type="text" name="Alcohol" placeholder="Alcohol% (Range: 0-100)" required="required" />
         
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
     </form>
