@@ -21,11 +21,11 @@ def predict():
     output='{0:.{1}f}'.format(prediction[0][1], 2)
 
     if output>str(0.9):
-        return render_template('Wine_quality.html',prediction_text='Wine quality is Excellent with Probability of  {}'.format(output))
+        return render_template('Wine_quality.html',prediction_text='Wine quality is Excellent.')
     elif ( output>str(0.6) and output<=str(0.9)):
-        return render_template('Wine_quality.html',prediction_text='Wine quality is Mediocre with Probability of {}'.format(output))
+        return render_template('Wine_quality.html',prediction_text='Wine quality is Mediocre.')
     else:
-        return render_template('Wine_quality.html',prediction_text='Wine quality is Inferior with Probability of {}'.format(output))
+        return render_template('Wine_quality.html',prediction_text='Wine quality is Inferior.')
 
 
 if __name__ == "__main__":
