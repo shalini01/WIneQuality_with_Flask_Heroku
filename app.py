@@ -15,12 +15,15 @@ def predict():
     '''
     For rendering results on HTML GUI
     '''
+    
+    
     float_features = [float(x) for x in request.form.values()]
+    print(float_features)
     final_features = [np.array(float_features)]
     prediction=model.predict_proba(final_features)
     output='{0:.{1}f}'.format(prediction[0][1], 2)
 
-      if  (0 <= float_features[0] <= 1) and (0 <= float_features[1] <= 1) and (0 <= float_features[2] <= 14) and (0 <= float_features[3] <= 100):
+    if  (0 <= float_features[0] <= 1) and (0 <= float_features[1] <= 1) and (0 <= float_features[2] <= 14) and (0 <= float_features[3] <= 100):
         
         if output>str(0.9):
             return render_template('Wine_quality.html',prediction_text='Wine quality is Excellent.')
@@ -31,6 +34,14 @@ def predict():
 
     else:
         return render_template('Wine_quality.html',prediction_text='Incorrect Data Value')
+
+
+#    if output>str(0.9):
+#        return render_template('Wine_quality.html',prediction_text='Wine quality is Excellent.')
+#    elif ( output>str(0.6) and output<=str(0.9)):
+#        return render_template('Wine_quality.html',prediction_text='Wine quality is Mediocre.')
+#    else:
+#        return render_template('Wine_quality.html',prediction_text='Wine quality is Inferior.')
 
 
 if __name__ == "__main__":
